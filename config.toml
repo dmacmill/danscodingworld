@@ -84,7 +84,7 @@ paginate = 5
 
       [languages.en.params.logo]
         logoText = "Dan's Coding World"
-        logoHomeLink = "/post"
+        logoHomeLink = "/posts"
 
       [languages.en.menu]
         [[languages.en.menu.main]]
@@ -94,4 +94,4 @@ paginate = 5
         [[languages.en.menu.main]]
           identifier = "posts"
           name = "Posts"
-          url = "/post"
+          url = "/posts"
