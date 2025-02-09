@@ -1,4 +1,4 @@
-baseURL = 'http://danscoding.world/'
+baseURL = 'https://danscoding.world/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 
