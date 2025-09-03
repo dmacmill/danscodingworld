@@ -118,13 +118,13 @@ that has guardrails against things like this happening.
 ## Any other spooky stuff that can happen?
 
 Oh, race conditions which is inevitable when working with multiple writers,
-which would be handled with a lock the way iceoryx2 does. Except now you have a
-new problem with crashing, that leaving a deadlock on process crash.
+which could be handled with a queue the way iceoryx2 does. Except now you have 
+a new problem with crashing, leaving a deadlock on process crash.
 
 Iceoryx2 hides a lot of the complexity that comes with dealing with this, and
 posts some guard rails to prevent critical errors. It's fixed-size memory
-prevents data corruption, object lifetimes are better handled in it's native
-language of Rust.
+prevents data corruption, and object lifetimes are better handled in it's 
+native language of Rust.
 
 
 ## So what's the catch, if there is any?
