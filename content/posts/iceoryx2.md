@@ -117,9 +117,12 @@ that has guardrails against things like this happening.
 
 ## Any other spooky stuff that can happen?
 
-Oh, race conditions which is inevitable when working with multiple writers,
-which could be handled with a queue the way iceoryx2 does. Except now you have 
-a new problem with crashing, leaving a deadlock on process crash.
+Oh, race conditions which is inevitable when working with concurrent writers
+and readers. There are basically two options to prevent them. The naïve approach
+are locks but now you have a new problem with crashing, leaving a deadlock on
+process crash. The other option are lock-free algorithms, like iceoryx2 does with
+lock-free queues. But this is also non-trivial and subtle errors in the lock-free
+algorithms can lead to data races, which you wanted to prevent in the first place.
 
 Iceoryx2 hides a lot of the complexity that comes with dealing with this, and
 posts some guard rails to prevent critical errors. It's fixed-size memory
